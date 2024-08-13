@@ -18,7 +18,6 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<PrivateRoute><HomePage /></PrivateRoute>} />
             <Route path="/item/:id" element={<LatteCard />} />
-            {/* <Route path="/auto-bidding" element={<PrivateRoute><AutoBiddingConfig /></PrivateRoute>} /> */}
             <Route path="/admin" element={<PrivateRoute><AdminDashboard /></PrivateRoute>} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

@@ -18,7 +18,7 @@ import {
   InputRightElement,
 } from '@chakra-ui/react';
 import { FaUserAlt, FaLock } from 'react-icons/fa';
-import { useAuth } from './Authentification';
+import { useAuth } from '../components/Authentification';
 import { useNavigate } from 'react-router-dom'; 
 
 const CFaUserAlt = chakra(FaUserAlt);

@@ -19,10 +19,10 @@ import { Center,
     ModalBody,
     ModalCloseButton,
     InputLeftElement } from '@chakra-ui/react';
-import LatteCard from './LatteCard';
+import LatteCard from '../components/LatteCard';
 import { SettingsIcon } from '@chakra-ui/icons';
 import config from '../Config';
-import NotificationChecker from './NotificationChecker';
+import NotificationChecker from '../components/NotificationChecker';
 
 const PAGE_SIZE = 10;
 

@@ -1,7 +1,0 @@
-PUT http://localhost:8000/api/items/2/
-Content-Type: application/json
-User-Access: admin
-
-{
-  "starting_price": "-20"
-}

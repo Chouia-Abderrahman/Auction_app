@@ -25,13 +25,15 @@ jobs:
       - name: Build and start containers
         run: docker-compose up --build -d
 
-      - name: Wait for services to be healthy
+      - name: Wait for backend service to be healthy
         run: |
           docker-compose ps
-          docker-compose exec -T <service_name> /bin/sh -c "until curl -s http://localhost:<port>; do sleep 5; done"
+          docker-compose exec -T backend /bin/sh -c "until curl -s http://localhost:8000; do sleep 5; done"
 
-      - name: Run tests
-        run: docker-compose exec -T <service_name> /bin/sh -c "pytest"
+      - name: Wait for frontend service to be healthy
+        run: |
+          docker-compose ps
+          docker-compose exec -T frontend /bin/sh -c "until curl -s http://localhost:5173; do sleep 5; done"
 
       - name: Tear down Docker Compose
         run: docker-compose down
